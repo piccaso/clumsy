@@ -7,7 +7,7 @@
 #define KEEP_AT_MOST 2000
 // send FLUSH_WHEN_FULL packets when buffer is full
 #define FLUSH_WHEN_FULL 800
-#define LAG_DEFAULT 50
+#define LAG_DEFAULT 80
 
 // don't need a chance
 static Ihandle *inboundCheckbox, *outboundCheckbox, *timeInput;
@@ -48,7 +48,7 @@ static Ihandle *lagSetupUI() {
     IupSetAttribute(outboundCheckbox, SYNCED_VALUE, (char*)&lagOutbound);
 
     // enable by default to avoid confusing
-    IupSetAttribute(inboundCheckbox, "VALUE", "ON");
+    IupSetAttribute(inboundCheckbox, "VALUE", "OFF");
     IupSetAttribute(outboundCheckbox, "VALUE", "ON");
 
     if (parameterized) {

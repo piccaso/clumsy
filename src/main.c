@@ -478,6 +478,11 @@ static void uiSetupModule(Module *module, Ihandle *parent) {
         controls = module->setupUIFunc(),
         NULL
     );
+
+    if (strcmp(module->displayName, "Lag") == 0) {
+        IupSetAttribute(toggle, "VALUE", "ON");
+    }
+
     IupSetAttribute(groupBox, "EXPAND", "HORIZONTAL");
     IupSetAttribute(groupBox, "ALIGNMENT", "ACENTER");
     IupSetAttribute(controls, "ALIGNMENT", "ACENTER");
